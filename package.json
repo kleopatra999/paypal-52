@@ -1,0 +1,31 @@
+{
+  "name": "eden-paypal",
+  "description": "Eden Node JS GitHub",
+  "version": "0.0.23",
+  "author": {
+    "name": "Dan Michael Molina",
+    "email": "danmichaelmolina@gmail.com"
+  },
+  "keywords": [
+    "eden",
+    "library"
+  ],
+  "devDependencies": {
+    "mocha": "1.21.4",
+    "mocha-jshint": "0.0.9"
+  },
+  "dependencies": {
+      "eden-class": "0.0.23",
+      "eden-oauth2": "0.0.23",
+      "eden-hash": "0.0.23",
+      "eden-rest" : "0.0.23"
+  },
+  "main": "./github.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edenjs/github.git"
+  },
+  "scripts": {
+    "test": "mocha --harmony"
+  }
+}
