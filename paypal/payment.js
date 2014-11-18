@@ -63,7 +63,7 @@ module.exports = require('eden-class').extend(function() {
 			.setHeaders('Authorization', this._tokenType+' '+this._accessToken)
 			.setMethod('POST')
 			.setBody(JSON.stringify(query))
-			.getQueryResponse(callback);
+			.getJsonResponse(callback);
 		
 		return this;
 	}

@@ -88,7 +88,7 @@ module.exports = require('eden-class').extend(function() {
 		
 		request.setMethod('POST')
 			.setBody(hash().toQuery(query))
-			.getQueryResponse(callback);
+			.getJsonResponse(callback, 'utf8');
 		
 		return this;
 	};

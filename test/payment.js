@@ -1,13 +1,12 @@
 var paypal 	= require('../paypal');
-var rest	= require('eden-rest');
-var hash 	= require('eden-hash');
+var assert = require('assert');
 
 var accessToken = 'A015j1Vxv7lefyrK9cpmK9LpkgTWUeET2XQ6sN232A3YelY';
 var tokenType 	= 'Bearer';
 
 describe('Eden JS Paypal Api Payment Test', function() {
     describe('Functional Test', function() {
-        it('must create paypal payment', function() {
+        it('must create paypal payment', function(done) {
 			var options = {
 				"intent": "sale",
 				"payer": {
@@ -51,7 +50,13 @@ describe('Eden JS Paypal Api Payment Test', function() {
 			
             paypal()
 				.payment(accessToken, tokenType, false)
-				.create(options, function(error, data) {});
+				.create(options, function(error, response, meta) {
+					assert.equal(error, null);
+					assert.equal(typeof response.id, 'string');
+					assert.equal(response.state, 'approved');
+					
+					done();
+				});
         });
     });
 });
